@@ -21,9 +21,9 @@ void main()
     char filePath[256];
     char temp;
 
-    printf("Which format of the file you are going to choose:\n");
+    printf("Which file mode you are going to choose:\n");
     printf("1.Create new file or Open Existing file with overwrite mode.\n");
-    printf("2.Create new file or Open Exising file append mode.\n");
+    printf("2.Create new file or Open Existing file append mode.\n");
 
     scanf("%d", &fileFormat);
     if (fileFormat < 1 || fileFormat > 2)
