@@ -4,11 +4,21 @@
 
 DataWrite(FILE *filePtr)
 {
-  char inputStr[1000];
+    char inputStr[1000];
+    char flag[5];
+    char flagStr[]= "yes";
+    char temp;
+    do
+    {
+      printf("Enter the string:\n");
+      scanf("%c",&temp);
+      fgets(inputStr, 1000, stdin);
+      fputs(inputStr, filePtr);
+      printf("Do you want write more yes/no :");
+      scanf("%s",flag);
 
-  printf("Enter the string: ");
-  scanf("%[^\n]", inputStr);
-  fputs(inputStr, filePtr);
+    }while(strcmp(flag, "yes") == 0);
+
   fclose(filePtr);
 }
 
@@ -56,9 +66,6 @@ void main()
         }
         DataWrite(fp);
         break;
-
-    default:
-        printf("wrong file format\n");
     }
 
     getch();
